@@ -58,8 +58,8 @@ void ANetFormsCharacter::SetupPlayerInputComponent(class UInputComponent* Player
 {
 	// Set up gameplay key bindings
 	check(PlayerInputComponent);
-	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
-	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ANetFormsCharacter::Jump);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ANetFormsCharacter::StopJumping);
 
 	PlayerInputComponent->BindAxis("Move Forward / Backward", this, &ANetFormsCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("Move Right / Left", this, &ANetFormsCharacter::MoveRight);
