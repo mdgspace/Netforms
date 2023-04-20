@@ -74,6 +74,8 @@ void APunch::TriggerEnter(class UPrimitiveComponent* HitComponent, class AActor*
 {
 	Super::TriggerEnter(HitComponent, OtherActor, OtherComp, otherBodyIndex, bFromSweep, SweepResult);
 
+	UE_LOG(LogTemp, Warning, TEXT("Punch"));
+
 	ACharacter* OtherCharacter = Cast<ACharacter>(OtherActor);
 	if (OtherCharacter != nullptr)
 	{

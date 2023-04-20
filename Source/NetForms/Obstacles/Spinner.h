@@ -23,6 +23,9 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	void TriggerEnter(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 otherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) override;
+	void TriggerExit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 otherBodyIndex) override;
+
 	UPROPERTY(EditAnywhere, Category = Movement)
 		float PitchValue = 0;
 
@@ -31,4 +34,13 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = Movement)
 		float RollValue = 0;
+
+	UPROPERTY(EditAnywhere, Category = Movement)
+		float DelTime = 0;
+
+	UPROPERTY(EditAnywhere, Category = Movement)
+		FVector InitPos;
+
+	UPROPERTY(EditAnywhere, Category = Movement)
+		bool IsOnPlatform = false; 
 };

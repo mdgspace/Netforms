@@ -38,5 +38,6 @@ public:
 
 	UFUNCTION()
 		virtual void TriggerEnter(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp,  int32 otherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
-
+	UFUNCTION()
+		virtual void TriggerExit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 otherBodyIndex);
 };

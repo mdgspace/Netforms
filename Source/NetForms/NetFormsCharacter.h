@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "CharacterPhysicsHandler.h"
 #include "NetFormsCharacter.generated.h"
 
 UCLASS(config=Game)
@@ -18,6 +19,10 @@ class ANetFormsCharacter : public ACharacter
 	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
+
+	/** Physics Controller */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	class UCharacterPhysicsHandler* PhysicsController;
 
 public:
 	ANetFormsCharacter();
