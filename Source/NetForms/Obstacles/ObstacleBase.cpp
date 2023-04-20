@@ -10,7 +10,7 @@ AObstacleBase::AObstacleBase()
 	PrimaryActorTick.bCanEverTick = true;
 
 	SM_Obstacle = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ObstacleMesh"));
-	RootComponent = SM_Obstacle;
+	SetRootComponent(SM_Obstacle);
 
 	TBox = CreateDefaultSubobject<UBoxComponent>(TEXT("TBOX"));
 	TBox->SetGenerateOverlapEvents(true);
@@ -37,7 +37,12 @@ void AObstacleBase::Tick(float DeltaTime)
 
 }
 
-void AObstacleBase::TriggerEnter(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 otherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
+void AObstacleBase::TriggerEnter(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 otherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
+{
+
+}
+
+void AObstacleBase::TriggerExit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 otherBodyIndex)
 {
 
 }
